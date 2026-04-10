@@ -46,7 +46,7 @@ export default function LendSmartHeader() {
   }, [mobileOpen]);
 
   return (
-    <header className="w-full overflow-visible px-4">
+    <header className="w-[calc(100%-2rem)] px-4 mx-auto">
       <div className={`bg-white transition-all duration-300 ${isSticky ? "fixed top-0 left-0 w-full z-50 shadow-lg" : "relative"}`}>
         <div className="bg-[#F4F4F4] border-y border-gray-300 ">
           <div className="max-w-[1440px] mx-auto relative flex min-h-[70px] items-center justify-between py-2">
