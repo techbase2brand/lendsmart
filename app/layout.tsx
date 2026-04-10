@@ -6,6 +6,7 @@ import Footer from "./header-footer-component/Footer";
 import Annocementbar from "./header-footer-component/Annocementbar";
 
 import AOSInit from '@/app/components/AOSInit';
+import CTABanner from "./pages-component/CTABanner";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -37,7 +38,7 @@ export default function RootLayout({
       <body style={{ fontFamily: "var(--font-poppins), sans-serif" }}>
         <Annocementbar />
         <Header />
-         <AOSInit />
+        <AOSInit />
         <main className="">{children}
           {/* Floating WhatsApp — safe-area for iPhone home indicator / notch */}
           <a
@@ -53,6 +54,13 @@ export default function RootLayout({
             </svg>
           </a>
         </main>
+        <CTABanner
+          title="A team of industry pros to guide you each step of the way"
+          description="Most people find that mortgage financing is complicated and confusing. We help you buy your dream home by simplifying the mortgage financing process with personalized loan options that save you time and money."
+          email="info@lendsmartmortgages.com"
+          phone="0413206624"
+          whatsapp="61413206624"
+        />
         <Footer />
       </body>
     </html>

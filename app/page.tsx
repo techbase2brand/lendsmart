@@ -1,5 +1,5 @@
 import About from "./pages-component/About";
-import CTABanner from "./pages-component/CTABanner";
+
 import Hero from "./pages-component/Hero";
 import LoanProcess from "./pages-component/LoanProcess";
 import LoanServices from "./pages-component/LoanServices";
@@ -11,42 +11,36 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <About 
+      <About
         description1="LendSmart Mortgages helps individuals, families, and businessesaccess the right loan solutions with confidence."
         description2="We work with a wide network of lenders to help you find loan options that suit your financial goals. Whether you arepurchasing a home, financing a vehicle, or expanding yourbusiness, we guide you through the entire loan process."
         gaolHeading="Our goal is to make borrowing"
         gaolDescription=" simple, transparent, and stress-free."
         imageSrc="/land-smart.png"
       />
-      <LoanServices 
+      <LoanServices
         title="Our Loan Services"
         description="There are so many Loan & financing options"
       />
       <WhyChoose />
-      <LoanProcess 
+      <LoanProcess
         normalText="How Our"
         highlightText="Loan Process"
         breakText="Works"
         description="Choosing the right loan can be complicated. At LendSmart Mortgages, we simplify the process and help you make informed decisions."
       />
-      <LoanSupport 
-         highlightText="Loan Support"
+      <LoanSupport
+        highlightText="Loan Support"
         normalText="for"
         breakText="Different Needs"
         description="Most people find that mortgage financing is complicated and confusing. We help you buy your dream home by simplifying the mortgage financing process with personalized loan options that save you time and money."
       />
       <Stats />
-      <Testimonials 
+      <Testimonials
         title="Testimonials"
         description="Clients trust LendSmart Mortgages for reliable loan guidance and support."
       />
-      <CTABanner
-        title="A team of industry pros to guide you each step of the way"
-        description="Most people find that mortgage financing is complicated and confusing. We help you buy your dream home by simplifying the mortgage financing process with personalized loan options that save you time and money."
-        email="info@lendsmartmortgages.com"
-        phone="0413206624"
-        whatsapp="61413206624"
-      />
+
     </>
   );
 }
