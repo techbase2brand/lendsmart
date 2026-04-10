@@ -1,13 +1,16 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
+
 type TestimonialsProps = {
   title?: string;
   description?: string;
 };
+
 const testimonials = [
   {
+    id: 1,
     name: "Michael Anderson",
     time: "3 Days ago",
     title: "Professional service and fast communication",
@@ -15,36 +18,53 @@ const testimonials = [
     avatar: "/user.png",
   },
   {
-    name: "Michael Anderson",
-    time: "3 Days ago",
-    title: "Professional service and fast communication",
-    text: `"Great advice and support throughout the loan application process."\n"The team helped us understand our loan options clearly and made everything easier."`,
+    id: 2,
+    name: "John Davis",
+    time: "1 Week ago",
+    title: "Quick approval and great rates",
+    text: `"Amazing experience from start to finish."\n"The team was professional and got us the best deal possible."`,
     avatar: "/user.png",
   },
   {
+    id: 3,
     name: "Sarah Johnson",
     time: "5 Days ago",
     title: "Excellent support and guidance",
     text: `"Very smooth process from start to finish."\n"The team was responsive, helpful, and made the whole journey stress free."`,
     avatar: "/user.png",
   },
+  {
+    id: 4,
+    name: "Emily Rodriguez",
+    time: "2 Days ago",
+    title: "Best financial decision ever",
+    text: `"They explained everything clearly."\n"Never thought getting a loan could be this easy and transparent."`,
+    avatar: "/user.png",
+  },
 ];
 
 export default function Testimonials({ title, description }: TestimonialsProps) {
-  const [active, setActive] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
 
-  const visibleTestimonials = useMemo(() => {
-    const first = testimonials[active];
-    const second = testimonials[(active + 1) % testimonials.length];
-    return [first, second];
-  }, [active]);
+  // Show 2 cards: current and next
+  const visibleTestimonials = [
+    testimonials[activeIndex % testimonials.length],
+    testimonials[(activeIndex + 1) % testimonials.length],
+  ];
 
   const handlePrev = () => {
-    setActive((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    setTimeout(() => setIsAnimating(false), 400);
   };
 
   const handleNext = () => {
-    setActive((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setActiveIndex((prev) => (prev + 1) % testimonials.length);
+    setTimeout(() => setIsAnimating(false), 400);
   };
 
   return (
@@ -71,12 +91,12 @@ export default function Testimonials({ title, description }: TestimonialsProps) 
               )}
             </div>
 
-            {/* Cards overlapped on image */}
+            {/* Cards - Single by single slide */}
             <div className="relative z-40 mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:mt-10 lg:-mr-12 xl:-mr-[230px]">
               {visibleTestimonials.map((item, index) => (
                 <div
-                  key={`${item.name}-${index}-${active}`}
-                  className={`group rounded-[14px] border p-6 transition-all duration-300 ${
+                  key={`${item.id}-${activeIndex}-${index}`}
+                  className={`group rounded-[14px] border p-6 transition-all duration-400 ${
                     index === 0
                       ? "border-[#66b11f] bg-gradient-to-b from-[#509D1C] to-[#325918]"
                       : "border-[#474747] bg-[#1E1E1E] hover:border-[#66b11f] hover:bg-gradient-to-r hover:from-[#5aa417] hover:to-[#2f5f0d]"
@@ -122,12 +142,35 @@ export default function Testimonials({ title, description }: TestimonialsProps) 
               ))}
             </div>
 
-            {/* Nav buttons with SVG icons */}
+            {/* Progress indicator - shows current position */}
+            <div className="relative mt-6 flex justify-center gap-2 lg:justify-center xl:-mr-[230px]">
+              {testimonials.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => {
+                    if (!isAnimating) {
+                      setIsAnimating(true);
+                      setActiveIndex(idx);
+                      setTimeout(() => setIsAnimating(false), 400);
+                    }
+                  }}
+                  className={`h-1.5 rounded-full transition-all duration-300 ${
+                    activeIndex === idx 
+                      ? "w-8 bg-[#79c44a]" 
+                      : "w-1.5 bg-gray-600 hover:bg-gray-500"
+                  }`}
+                  aria-label={`Go to slide ${idx + 1}`}
+                />
+              ))}
+            </div>
+
+            {/* Nav buttons */}
             <div className="relative mt-4 flex justify-center mb-6 md:mb-2 gap-4 sm:gap-5 lg:justify-end lg:gap-5 xl:-mr-[230px]">
               <button
                 type="button"
                 onClick={handlePrev}
-                className="group flex h-11 w-11 min-h-[44px] min-w-[44px] cursor-pointer shrink-0 items-center justify-center rounded-full transition active:opacity-90"
+                disabled={isAnimating}
+                className="group flex h-11 w-11 min-h-[44px] min-w-[44px] cursor-pointer shrink-0 items-center justify-center rounded-full transition active:opacity-90 hover:bg-white/10 disabled:opacity-50 disabled:cursor-not-allowed"
                 aria-label="Previous testimonial">
                 <Image
                   src="/arrow-left.svg"
@@ -141,7 +184,8 @@ export default function Testimonials({ title, description }: TestimonialsProps) 
               <button
                 type="button"
                 onClick={handleNext}
-                className="group flex h-11 w-11 min-h-[44px] min-w-[44px] cursor-pointer shrink-0 items-center justify-center rounded-full transition active:opacity-90"
+                disabled={isAnimating}
+                className="group flex h-11 w-11 min-h-[44px] min-w-[44px] cursor-pointer shrink-0 items-center justify-center rounded-full transition active:opacity-90 hover:bg-white/10 disabled:opacity-50 disabled:cursor-not-allowed"
                 aria-label="Next testimonial"
               >
                 <Image
