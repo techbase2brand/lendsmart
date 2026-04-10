@@ -86,7 +86,7 @@ export default function WhyChoose() {
         </div>
       </div>
       {/* Left bottom hand image */}
-      <div className="pointer-events-none mt-8 w-[100px] sm:w-[100px] bottom-0 absolute lg:-bottom-2 lg:-left-[0px] lg:mt-0 lg:w-[100px]">
+      <div className="pointer-events-none mt-8 w-[80px] sm:w-[120px] md:w-[160px] lg:w-[220px] xl:w-[280px] absolute bottom-0 lg:-bottom-2 lg:left-0 lg:mt-0">
         <Image
           src="/hand-holding.png"
           alt="Hand holding house"
