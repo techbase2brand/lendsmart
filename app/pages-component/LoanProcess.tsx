@@ -53,7 +53,6 @@ export default function LoanProcess({ highlightText, normalText, breakText, desc
             we simplify the process and help you make informed decisions.
           </p>
         </div>
-
         {/* steps */}
         <div className="relative mt-12 lg:mt-14">
           {/* dashed connectors desktop */}
