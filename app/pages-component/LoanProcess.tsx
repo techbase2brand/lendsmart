@@ -35,7 +35,7 @@ const steps = [
     num: 5,
     title: "Approval &\nSettlement",
     desc: "Reach out by phone, WhatsApp, or online form to discuss your loan needs.",
-    icon: "/approved.png",
+    icon: "/approved 1.png",
   },
 ];
 
