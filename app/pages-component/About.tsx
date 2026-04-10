@@ -153,7 +153,7 @@ export default function About({description1, description2, gaolHeading, gaolDesc
               </div>
 
               <Link href="/about"
-                className="inline-flex h-[42px] items-center justify-center gap-2 rounded-full border border-[#8ebc64] hover:border-[#0781c3] px-8 text-[14px] font-medium text-[#5e9730] hover:text-white transition hover:hover:bg-[#0781c3]">
+                className="inline-flex h-[42px] items-center justify-center gap-2 rounded-full border border-[#8ebc64] hover:border-[#0781c3] w-fit px-8 text-[14px] font-medium text-[#5e9730] hover:text-white transition hover:hover:bg-[#0781c3]">
                 Know More About Us
                   {rightArrow}
               </Link>
