@@ -1,9 +1,9 @@
 import Image from "next/image";
 type LoanProcessProps = {
-    highlightText?: string;
-    normalText?: string;  
-    breakText?: string;
-    description: string;
+  highlightText?: string;
+  normalText?: string;
+  breakText?: string;
+  description: string;
 };
 const steps = [
   {
@@ -48,7 +48,6 @@ export default function LoanProcess({ highlightText, normalText, breakText, desc
           <h2 className="text-[28px] sm:text-[38px] lg:text-[48px] xl:text-[54px] font-extrabold leading-[1.08] tracking-[-0.02em] text-black">
             How Our <span className="text-[#7cc242]">Loan Process</span> Works
           </h2>
-
           <p className="mx-auto mt-3 max-w-[620px] text-[15px] leading-7 text-[#333]">
             Choosing the right loan can be complicated. At LendSmart Mortgages,
             we simplify the process and help you make informed decisions.
@@ -59,11 +58,11 @@ export default function LoanProcess({ highlightText, normalText, breakText, desc
         <div className="relative mt-12 lg:mt-14">
           {/* dashed connectors desktop */}
           <div className="pointer-events-none absolute left-0 right-0 top-[70px] hidden lg:block">
-            <svg className="h-[60px] w-full"viewBox="0 0 1200 90"preserveAspectRatio="none">
-              <polyline points="170,58 225,52 280,48"stroke="#8e8e8e"strokeWidth="1.4"strokeDasharray="3 6"fill="none"strokeLinecap="round"strokeLinejoin="round"/>
-              <polyline points="390,48 480,70 570,78"stroke="#8e8e8e"strokeWidth="1.4"strokeDasharray="3 6"fill="none"strokeLinecap="round"strokeLinejoin="round"/>
-              <polyline points="630,78 700,52 770,46" stroke="#8e8e8e" strokeWidth="1.4"strokeDasharray="3 6"fill="none"strokeLinecap="round"strokeLinejoin="round"/>
-              <polyline points="850,46 955,66 1060,72" stroke="#8e8e8e"strokeWidth="1.4" strokeDasharray="3 6"fill="none"strokeLinecap="round"strokeLinejoin="round"/>
+            <svg className="h-[60px] w-full" viewBox="0 0 1200 90" preserveAspectRatio="none">
+              <polyline points="170,58 225,52 280,48" stroke="#8e8e8e" strokeWidth="1.4" strokeDasharray="3 6" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+              <polyline points="390,48 480,70 570,78" stroke="#8e8e8e" strokeWidth="1.4" strokeDasharray="3 6" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+              <polyline points="630,78 700,52 770,46" stroke="#8e8e8e" strokeWidth="1.4" strokeDasharray="3 6" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+              <polyline points="850,46 955,66 1060,72" stroke="#8e8e8e" strokeWidth="1.4" strokeDasharray="3 6" fill="none" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </div>
 
@@ -74,12 +73,12 @@ export default function LoanProcess({ highlightText, normalText, breakText, desc
 
               return (
                 <div key={step.num} className={`relative flex justify-center ${moveUpCard ? "lg:top-[-30px]" : ""}`}>
-                  <div className={`relative flex min-h-[220px] w-full max-w-[200px] flex-col items-center px-4 pt-9 pb-6 text-center sm:min-h-[272px] sm:max-w-[212px] sm:px-8 sm:pt-10 sm:pb-7 ${isActive ? "bg-gradient-to-b from-[#509D1C] to-[#325918] text-white" : "bg-[#f3f3f3] text-black" }`} style={{ borderRadius: "999px",}}>
+                  <div className={`relative flex min-h-[220px] w-full max-w-[200px] flex-col items-center px-4 pt-9 pb-6 text-center sm:min-h-[272px] sm:max-w-[212px] sm:px-8 sm:pt-10 sm:pb-7 ${isActive ? "bg-gradient-to-b from-[#509D1C] to-[#325918] text-white" : "bg-[#f3f3f3] text-black"}`} style={{ borderRadius: "999px", }}>
                     <div className="relative h-[56px] w-[56px]">
-                      <Image src={step.icon} alt={step.title.replace("\n", " ")} width={56} height={56} priority quality={75} className={`object-contain ${isActive ? "brightness-0 invert" : ""}`}/>
+                      <Image src={step.icon} alt={step.title.replace("\n", " ")} width={56} height={56} priority quality={75} className={`object-contain ${isActive ? "brightness-0 invert" : ""}`} />
                     </div>
 
-                    <h3 className={`mt-4 whitespace-pre-line text-[15px] font-extrabold leading-[1.15] ${isActive ? "text-white" : "text-black" }`}>
+                    <h3 className={`mt-4 whitespace-pre-line text-[15px] font-extrabold leading-[1.15] ${isActive ? "text-white" : "text-black"}`}>
                       {step.num}. {step.title}
                     </h3>
 
@@ -93,7 +92,7 @@ export default function LoanProcess({ highlightText, normalText, breakText, desc
           </div>
         </div>
 
-       
+
       </div>
     </section>
   );
