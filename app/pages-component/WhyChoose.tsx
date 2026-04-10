@@ -12,7 +12,7 @@ export default function WhyChoose() {
   return (
     <section className="relative top-[-48px] overflow-hidden bg-[#F4FBE9] pt-20 sm:top-[-80px] sm:pt-28 lg:top-[-80px] lg:pt-28 px-4 lg:px-10">
       <div className="max-w-[1440px] mx-auto">
-        <div className="grid grid-cols-1 items-end gap-10 md:gap-5 lg:grid-cols-[1.05fr_0.95fr] ">
+        <div className="grid grid-cols-1 items-end gap-5 md:gap-5 lg:grid-cols-[1.05fr_0.95fr] ">
           {/* Left content */}
           <div className="relative lg:pt-6 pb-0 md:pb-36">
             <div className=" ">
