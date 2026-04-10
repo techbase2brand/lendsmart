@@ -60,7 +60,7 @@ export default function LendSmartHeader() {
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center justify-center flex-1 gap-8 text-[14px] font-normal text-black">
               {navLinks.map((item) => (
-                <Link key={item.label} href={item.href} className="hover:text-[#1380d4] transition-colors">
+                <Link key={item.label} href={item.href} className="hover:text-[#1380d4] hover:underline  transition-colors">
                   {item.label}
                 </Link>
               ))}
