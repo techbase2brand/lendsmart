@@ -14,7 +14,7 @@ export default function WhyChoose() {
       <div className="max-w-[1440px] mx-auto">
         <div className="grid grid-cols-1 items-end gap-10 md:gap-5 lg:grid-cols-[1.05fr_0.95fr] ">
           {/* Left content */}
-          <div className="relative lg:pt-6 pb-0 md:pb-26">
+          <div className="relative lg:pt-6 pb-0 md:pb-36">
             <div className=" ">
               <h2 className="text-[28px] font-extrabold leading-[1.08] tracking-[-0.02em] text-black sm:text-[32px] lg:text-[40px]">
                 Why Choose <span className="text-[#1380d4]">Lend</span>
@@ -86,7 +86,7 @@ export default function WhyChoose() {
         </div>
       </div>
       {/* Left bottom hand image */}
-      <div className="pointer-events-none mt-8 w-[80px] sm:w-[120px] md:w-[160px] lg:w-[220px] xl:w-[280px] absolute bottom-0 lg:-bottom-2 lg:left-0 lg:mt-0">
+      <div className="pointer-events-none mt-8 w-[100px] sm:w-[130px] bottom-0 absolute lg:-bottom-2 lg:-left-[0px] lg:mt-0 lg:w-[132px]">
         <Image
           src="/hand-holding.png"
           alt="Hand holding house"
