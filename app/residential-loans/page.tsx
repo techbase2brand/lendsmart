@@ -41,6 +41,35 @@ const Page = () => {
             ))
         }
     ];
+
+    // What We Help With data start here
+    const helpWithData = [
+        {
+            id: 1,
+            title: "What We Help With",
+            image: "/what-we-help-with.webp"
+        },
+        {
+            id: 2,
+            title: " Debt Consolidation Loans",
+            image: "/debt0image.webp"
+        },
+        {
+            id: 3,
+            title: "Investment property loans",
+            image: "/investment-properly.webp"
+        },
+        {
+            id: 4,
+            title: "Refinancing existing loans",
+            image: "/loan-structuring.webp"
+        },
+        {
+            id: 5,
+            title: "Loan structuring advice",
+            image: "/refinacing-image.webp"
+        }
+    ];
     return (
         <>
             <Banner
@@ -93,7 +122,10 @@ const Page = () => {
                 showClients={true}
                 showCTA={true}
             />
-            <WhatWeHelpWith />
+            <WhatWeHelpWith
+                title="What We Help With"
+                helpWithData={helpWithData}
+            />
         </>
     );
 };

@@ -2,7 +2,18 @@
 import Image from "next/image";
 import { memo } from "react";
 
-const Banner = (props) => {
+interface BannerProps {
+  bredcrumbs?: string[];
+  title?: string;
+  description1?: string;
+  description2?: string;
+  serviceItems?: Array<{ id: string | number; icon: React.ReactNode; title: string }>;
+  callToAction?: { link: string; text: string };
+  chatToAction?: { link: string; text: string };
+  image?: string;
+}
+
+const Banner = (props: BannerProps) => {
   const {
     bredcrumbs,
     title,
@@ -68,7 +79,7 @@ const Banner = (props) => {
             )}
 
             {/* Service Items */}
-            {serviceItems?.length > 0 && (
+            {serviceItems && serviceItems.length > 0 && (
               <ul className="mt-4 sm:mt-6 flex flex-wrap gap-3 sm:gap-4">
                 {serviceItems.map((item) => (
                   <li key={item.id} className="flex items-center gap-2 sm:gap-3 bg-white/50 px-3 sm:px-4 py-2 rounded-lg">
