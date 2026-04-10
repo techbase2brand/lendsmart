@@ -28,8 +28,8 @@ export default function Hero() {
             </p>
 
             <div className="mt-6 flex flex-wrap items-center gap-4">
-              <a
-                href="tel:0413208624"
+              <a 
+                href="tel:+61413206624"
                 className="inline-flex h-[42px] items-center gap-2 rounded-[5px] bg-[#3f7416] hover:bg-[#0479c3] px-5 text-white shadow-sm transition hover:opacity-95">
                {callIcon}
                 <span className="text-[14px] font-semibold">Call Now</span>

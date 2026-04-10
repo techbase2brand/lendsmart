@@ -47,11 +47,47 @@ export default function Testimonials({ title, description }: TestimonialsProps) 
   const [activeIndex, setActiveIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
-  // Show 2 cards: current and next
-  const visibleTestimonials = [
-    testimonials[activeIndex % testimonials.length],
-    testimonials[(activeIndex + 1) % testimonials.length],
-  ];
+  // Responsive cards: 1 on mobile, 2 on desktop
+  const getVisibleCards = () => {
+    const cards = [];
+    const cardsToShow = typeof window !== 'undefined' && window.innerWidth < 640 ? 1 : 2;
+    
+    for (let i = 0; i < cardsToShow; i++) {
+      const index = (activeIndex + i) % testimonials.length;
+      cards.push(testimonials[index]);
+    }
+    return cards;
+  };
+
+  const [visibleTestimonials, setVisibleTestimonials] = useState(getVisibleCards());
+
+  useEffect(() => {
+    const handleResize = () => {
+      const cardsToShow = window.innerWidth < 640 ? 1 : 2;
+      const newCards = [];
+      for (let i = 0; i < cardsToShow; i++) {
+        const index = (activeIndex + i) % testimonials.length;
+        newCards.push(testimonials[index]);
+      }
+      setVisibleTestimonials(newCards);
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Call initially
+    
+    return () => window.removeEventListener('resize', handleResize);
+  }, [activeIndex]);
+
+  // Update visible cards when activeIndex changes
+  useEffect(() => {
+    const cardsToShow = typeof window !== 'undefined' && window.innerWidth < 640 ? 1 : 2;
+    const newCards = [];
+    for (let i = 0; i < cardsToShow; i++) {
+      const index = (activeIndex + i) % testimonials.length;
+      newCards.push(testimonials[index]);
+    }
+    setVisibleTestimonials(newCards);
+  }, [activeIndex]);
 
   const handlePrev = () => {
     if (isAnimating) return;
@@ -91,17 +127,15 @@ export default function Testimonials({ title, description }: TestimonialsProps) 
               )}
             </div>
 
-            {/* Cards - Single by single slide */}
+            {/* Cards - Responsive: 1 on mobile, 2 on desktop */}
             <div className="relative z-40 mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:mt-10 lg:-mr-12 xl:-mr-[230px]">
               {visibleTestimonials.map((item, index) => (
-                <div
-                  key={`${item.id}-${activeIndex}-${index}`}
-                  className={`group rounded-[14px] border p-6 transition-all duration-400 ${
+                <div key={`${item.id}-${activeIndex}-${index}`}
+                  className={`group rounded-[14px] h-full border p-6 transition-all duration-400 ${
                     index === 0
                       ? "border-[#66b11f] bg-gradient-to-b from-[#509D1C] to-[#325918]"
                       : "border-[#474747] bg-[#1E1E1E] hover:border-[#66b11f] hover:bg-gradient-to-r hover:from-[#5aa417] hover:to-[#2f5f0d]"
-                  }`}
-                >
+                  }`}>
                   <div className="text-[52px] font-black leading-none text-[#2f5f0d] transition-colors duration-300 group-hover:text-[#2f5f0d]">
                     ❝
                   </div>
@@ -142,7 +176,7 @@ export default function Testimonials({ title, description }: TestimonialsProps) 
               ))}
             </div>
 
-            {/* Progress indicator - shows current position */}
+            {/* Progress indicator */}
             <div className="relative mt-6 flex justify-center gap-2 lg:justify-center xl:-mr-[230px]">
               {testimonials.map((_, idx) => (
                 <button
@@ -165,7 +199,7 @@ export default function Testimonials({ title, description }: TestimonialsProps) 
             </div>
 
             {/* Nav buttons */}
-            <div className="relative mt-4 flex justify-center mb-6 md:mb-2 gap-4 sm:gap-5 lg:justify-end lg:gap-5 xl:-mr-[230px]">
+            <div className="relative mt-4 flex justify-center mb-0 md:mb-2 gap-4 sm:gap-5 lg:justify-end lg:gap-5 xl:-mr-[230px]">
               <button
                 type="button"
                 onClick={handlePrev}
@@ -200,7 +234,7 @@ export default function Testimonials({ title, description }: TestimonialsProps) 
           </div>
 
           {/* Right image */}
-          <div className="relative flex justify-center lg:justify-end">
+          <div className="relative flex justify-center lg:justify-end max-sm:hidden">
             <div className="relative z-10 h-[390px] w-full max-w-[320px] overflow-hidden rounded-[38px] sm:h-[460px] sm:max-w-[360px] lg:h-[550px] lg:max-w-[400px]">
               <Image
                 src="/family.png"

@@ -57,7 +57,7 @@ export default function About({description1, description2, gaolHeading, gaolDesc
     <svg width={20} height={20} viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><g clipPath="url(#clip0_127_97)"> <path d="M19.8678 9.6795L15.3225 5.13411C15.1592 4.94345 14.8722 4.92122 14.6816 5.08454C14.4909 5.24782 14.4687 5.53477 14.632 5.72543C14.6473 5.7432 14.6638 5.7598 14.6816 5.775L18.4497 9.54767L0.454526 9.54766C0.203515 9.54766 2.66186e-06 9.75118 2.61796e-06 10.0022C2.57407e-06 10.2533 0.203515 10.4567 0.454526 10.4567L18.4497 10.4568L14.6816 14.2248C14.4909 14.3881 14.4687 14.6751 14.632 14.8657C14.7953 15.0564 15.0822 15.0786 15.2729 14.9153C15.2907 14.9001 15.3073 14.8835 15.3225 14.8657L19.8679 10.3203C20.0441 10.1431 20.0441 9.8568 19.8678 9.6795Z"fill="currentColor"/></g><defs><clipPath id="clip0_127_97"><rect width={20} height={20} fill="white" /></clipPath></defs></svg>
   ));
   return (
-    <section id="about" className="bg-[#F4FBE9] pb-4 overflow-hidden px-4 lg:px-10">
+    <section id="about" className="bg-[#F4FBE9] pb-12 overflow-hidden px-4 lg:px-10">
       <div className="max-w-[1440px] mx-auto">
         <div className="grid grid-cols-1 items-end">
           {/* left */}
@@ -159,8 +159,7 @@ export default function About({description1, description2, gaolHeading, gaolDesc
               </Link>
             </div>
             </div>
-            <div className="relative mx-auto w-full max-w-[360px] lg:max-w-[400px] h-[300px] sm:h-[380px] lg:h-[400px]">
-
+            <div className="relative mx-auto w-full max-w-[360px] lg:max-w-[400px] h-[300px] sm:h-[380px] lg:h-[400px] max-sm:hidden">
               {/* person image */}
               <div className="absolute bottom-0 left-1/2 z-10 h-full w-full max-h-[280px] -translate-x-1/2 sm:max-h-none">
               {imageSrc && (
