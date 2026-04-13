@@ -132,7 +132,7 @@ export default function LendSmartHeader() {
             </ul>
 
             {/* WhatsApp Button */}
-            <div className="px-6 pt-6 pb-8">
+            <div className="px-4 py-5">
               <a 
                 href="https://wa.me/61413208624" 
                 target="_blank" 
@@ -146,7 +146,7 @@ export default function LendSmartHeader() {
             </div>
 
             {/* Footer / Contact Info */}
-            <div className="px-6 py-4 border-t border-white/20 mt-4">
+            <div className="px-6 py-4 border-t border-white/20 mt-0">
               <p className="text-white text-xs text-center">
                 <span className="block pb-2">Need help? Call us at</span>
                 <span className="text-white text-sm font-medium">+61 413 208 624</span>
