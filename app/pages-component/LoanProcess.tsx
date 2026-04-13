@@ -72,16 +72,16 @@ export default function LoanProcess({ highlightText, normalText, breakText, desc
 
               return (
                 <div key={step.num} className={`relative flex justify-center ${moveUpCard ? "lg:top-[-30px]" : ""}`}>
-                  <div className={`relative flex min-h-[220px] w-full max-w-[200px] flex-col items-center px-4 pt-9 pb-6 text-center sm:min-h-[272px] sm:max-w-[212px] sm:px-8 sm:pt-10 sm:pb-7 ${isActive ? "bg-gradient-to-b from-[#509D1C] to-[#325918] text-white" : "bg-[#f3f3f3] text-black"}`} style={{ borderRadius: "999px", }}>
+                  <div data-aos="fade-up"   data-aos-delay={index * 100} className={`group relative cursor-pointer hover:text-white flex min-h-[220px] hover:bg-gradient-to-b from-[#509D1C] to-[#325918]  w-full max-w-[200px] flex-col items-center px-4 pt-9 pb-6 text-center sm:min-h-[272px] sm:max-w-[212px] sm:px-8 sm:pt-10 sm:pb-7 ${isActive ? "bg-gradient-to-b from-[#509D1C] to-[#325918] text-white" : "bg-[#f3f3f3] text-black"}`} style={{ borderRadius: "999px", }}>
                     <div className="relative h-[56px] w-[56px]">
-                      <Image src={step.icon} alt={step.title.replace("\n", " ")} width={56} height={56} priority quality={75} className={`object-contain ${isActive ? "brightness-0 invert" : ""}`} />
+                      <Image src={step.icon} alt={step.title.replace("\n", " ")} width={56} height={56} priority quality={75} className={`object-contain ${isActive ? "brightness-0 invert" : "group-hover:brightness-0 group-hover:invert transition-all duration-300"}`} />
                     </div>
 
-                    <h3 className={`mt-4 whitespace-pre-line text-[15px] font-extrabold leading-[1.15] ${isActive ? "text-white" : "text-black"}`}>
+                    <h3 className={`mt-4 whitespace-pre-line text-[15px] group-hover:text-white font-extrabold leading-[1.15] ${isActive ? "text-white" : "text-black"}`}>
                       {step.num}. {step.title}
                     </h3>
 
-                    <p className={`mt-3 text-[14px] min-w-1 leading-[1.45] ${isActive ? "text-white/95" : "text-[#333]"}`}>
+                    <p className={`mt-3 text-[14px] min-w-1 group-hover:text-white leading-[1.45] ${isActive ? "text-white/95" : "text-[#333]"}`}>
                       {step.desc}
                     </p>
                   </div>
