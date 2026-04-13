@@ -68,13 +68,14 @@ export default function Hero() {
           {/* top right image */}
          <div className="hidden sm:flex relative justify-center lg:justify-end lg:pr-8 z-10">
           <div className="relative h-[250px] w-full max-w-[300px] sm:h-[290px] sm:max-w-[350px] lg:h-[400px] lg:max-w-[500px] overflow-hidden rounded-[16px]">
-            <Image
-              src="/hero.png"
-              alt="Hero house"
-              fill
-              priority
-              className="object-contain"
-            />
+           <Image
+            src="/hero.png"
+            alt="Hero house"
+            fill
+            priority
+            sizes="100vw"
+            className="object-contain"
+          />
           </div>
         </div>
         </div>
