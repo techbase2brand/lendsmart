@@ -1,10 +1,12 @@
 import Image from "next/image";
+
 type LoanProcessProps = {
   highlightText?: string;
   normalText?: string;
   breakText?: string;
   description: string;
 };
+
 const steps = [
   {
     num: 1,
@@ -23,7 +25,6 @@ const steps = [
     title: "Lender\nComparison",
     desc: "We compare loan products across lenders to find competitive options.",
     icon: "/officer.png",
-    active: true,
   },
   {
     num: 4,
@@ -45,7 +46,7 @@ export default function LoanProcess({ highlightText, normalText, breakText, desc
       <div className="max-w-[1440px] mx-auto">
         {/* heading */}
         <div className="mx-auto max-w-[100%] text-center">
-          <h2 data-aos="fade-up"  className="text-[28px] sm:text-[38px] lg:text-[48px] xl:text-[54px] font-extrabold leading-[1.08] tracking-[-0.02em] text-black">
+          <h2 data-aos="fade-up" className="text-[28px] sm:text-[38px] lg:text-[48px] xl:text-[54px] font-extrabold leading-[1.08] tracking-[-0.02em] text-black">
             How Our <span className="text-primary">Loan Process</span> Works
           </h2>
           <p data-aos="fade-up" data-aos-delay={200} className="mx-auto mt-3 max-w-[620px] text-[15px] leading-7 text-[#333]">
@@ -67,21 +68,24 @@ export default function LoanProcess({ highlightText, normalText, breakText, desc
 
           <div className="relative z-10 grid grid-cols-2 p-2 gap-6 sm:grid-cols-2 lg:grid-cols-5 lg:gap-4">
             {steps.map((step, index) => {
-              const isActive = !!step.active;
               const moveUpCard = index === 1 || index === 3;
-
+               const isThirdBox = index === 2;
               return (
                 <div key={step.num} className={`relative flex justify-center ${moveUpCard ? "lg:top-[-30px]" : ""}`}>
-                  <div data-aos="fade-up"   data-aos-delay={index * 100} className={`group relative cursor-pointer hover:text-white flex min-h-[220px] hover:bg-gradient-to-b from-[#509D1C] to-[#325918]  w-full max-w-[200px] flex-col items-center px-4 pt-9 pb-6 text-center sm:min-h-[272px] sm:max-w-[212px] sm:px-8 sm:pt-10 sm:pb-7 ${isActive ? "bg-gradient-to-b from-[#509D1C] to-[#325918] text-white" : "bg-[#f3f3f3] text-black"}`} style={{ borderRadius: "999px", }}>
+                  <div data-aos="fade-up" data-aos-delay={index * 100} className="group relative cursor-pointer hover:text-white flex min-h-[220px] hover:bg-gradient-to-b from-[#509D1C] to-[#325918] w-full max-w-[200px] flex-col items-center px-4 pt-9 pb-6 text-center sm:min-h-[272px] sm:max-w-[212px] sm:px-8 sm:pt-10 sm:pb-7 bg-[#f3f3f3] text-black" style={{ borderRadius: "999px" }}>
                     <div className="relative h-[56px] w-[56px]">
-                      <Image src={step.icon} alt={step.title.replace("\n", " ")} width={56} height={56} priority quality={75} className={`object-contain ${isActive ? "brightness-0 invert" : "group-hover:brightness-0 group-hover:invert transition-all duration-300"}`} />
+                      <Image src={step.icon} alt={step.title.replace("\n", " ")} width={56} height={56} priority quality={75} className={`object-contain transition-all duration-300 ${
+                        isThirdBox 
+                          ? 'invert group-hover:brightness-0 group-hover:invert' 
+                          : 'group-hover:brightness-0 group-hover:invert' // Normal hover effect for others
+                      }`}  />
                     </div>
 
-                    <h3 className={`mt-4 whitespace-pre-line text-[15px] group-hover:text-white font-extrabold leading-[1.15] ${isActive ? "text-white" : "text-black"}`}>
+                    <h3 className={`mt-4 whitespace-pre-line text-[15px] group-hover:text-white font-extrabold leading-[1.15] text-black`}>
                       {step.num}. {step.title}
                     </h3>
 
-                    <p className={`mt-3 text-[14px] min-w-1 group-hover:text-white leading-[1.45] ${isActive ? "text-white/95" : "text-[#333]"}`}>
+                    <p className={`mt-3 text-[14px] min-w-1 group-hover:text-white leading-[1.45] text-[#333]`}>
                       {step.desc}
                     </p>
                   </div>
@@ -90,8 +94,6 @@ export default function LoanProcess({ highlightText, normalText, breakText, desc
             })}
           </div>
         </div>
-
-
       </div>
     </section>
   );
