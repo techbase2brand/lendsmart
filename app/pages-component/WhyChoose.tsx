@@ -18,7 +18,7 @@ export default function WhyChoose() {
             <div className=" ">
               <h2 data-aos="fade-up"  className="text-[28px] font-extrabold leading-[1.08] tracking-[-0.02em] text-black sm:text-[32px] lg:text-[40px]">
                 Why Choose <span className="text-[#1380d4]">Lend</span>
-                <span className="text-[#7cc242]">Smart</span> Mortgages
+                <span className="text-primary">Smart</span> Mortgages
               </h2>
 
               <div className="mt-5 max-w-[650px] border-l-[5px] border-[#79c44a] pl-4">

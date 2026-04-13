@@ -31,7 +31,7 @@ export default function Hero() {
           {/* left content - mobile text color changes to white on mobile for better contrast */}
           <div className="py-10 lg:py-10 md:text-[#222222] text-white">
             <h1 data-aos="fade-up" className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-extrabold leading-normal md:leading-[1.08] tracking-[-0.02em]">
-              Smart <span className="text-[#84c441]">Loan</span> Solutions for{" "}
+              Smart <span className="text-primary">Loan</span> Solutions for{" "}
               <span className="block">Your Financial Goals</span>
             </h1>
 

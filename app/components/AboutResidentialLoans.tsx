@@ -143,7 +143,7 @@ const AboutResidentialLoans = ({
                                             {ourGoalHeading && ourGoalHeading}
                                             {ourGoalHeading && ourGoalDescription && ' '}
                                             {ourGoalDescription && (
-                                                <span className='text-[#79c44a]'>{ourGoalDescription}</span>
+                                                <span className='text-primary'>{ourGoalDescription}</span>
                                             )}
                                         </p>
                                     )}
@@ -159,14 +159,15 @@ const AboutResidentialLoans = ({
                             {imageSrc && (
                                 <div className='w-full lg:w-1/2 flex justify-center lg:justify-start'>
                                     <div className='relative w-full max-w-[463px] lg:max-w-none'>
-                                        <Image
-                                            width={463}
-                                            height={398}
-                                            priority
-                                            quality={75}
-                                            src={imageSrc}
-                                            alt="About Residential Loans"
-                                            className='w-full h-auto object-cover rounded-lg'
+                                       <Image
+                                        src={imageSrc}
+                                        alt="About Residential Loans"
+                                        width={463}
+                                        height={398}
+                                        quality={70}
+                                        priority
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 463px"
+                                        className="w-full h-auto object-cover rounded-lg"
                                         />
                                     </div>
                                 </div>

@@ -188,10 +188,10 @@ export default function Testimonials({ title, description }: TestimonialsProps) 
                       setTimeout(() => setIsAnimating(false), 400);
                     }
                   }}
-                  className={`h-1.5 rounded-full transition-all duration-300 ${
+                  className={`h-2 rounded-full transition-all duration-300 ${
                     activeIndex === idx 
                       ? "w-8 bg-[#79c44a]" 
-                      : "w-1.5 bg-gray-600 hover:bg-gray-500"
+                      : "w-2 bg-gray-600 hover:bg-gray-500"
                   }`}
                   aria-label={`Go to slide ${idx + 1}`}
                 />

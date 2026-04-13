@@ -87,7 +87,7 @@ export default function Stats() {
         <div className="grid grid-cols-2 gap-x-2 gap-y-2 sm:gap-x-6 lg:grid-cols-4 lg:gap-6">
           {stats.map((stat, i) => (
             <div data-aos="fade-up" data-aos-delay={i * 100} key={i} className=" text-center cursor-pointer transition-all duration-300 bg-white rounded-lg p-3 md:p-6 border border-[#7cc242] ">
-              <div className="text-[22px] font-semibold leading-none text-[#7cc242] lg:text-[40px]">
+              <div className="text-[22px] font-semibold leading-none text-primary lg:text-[40px]">
                 <CountUp
                   end={stat.value}
                   suffix={stat.suffix}

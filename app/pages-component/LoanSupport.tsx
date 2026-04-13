@@ -34,15 +34,16 @@ export default function LoanSupport({ highlightText, normalText, breakText, desc
           {/* Left image */}
           <div className="relative z-10 flex justify-center lg:justify-start">
             <div className="relative h-[390px] w-full max-w-[360px] sm:h-[400px] sm:max-w-[400px] lg:h-[520px] lg:max-w-[430px]">
-              <Image
-                src="/loan-supported.png"
-                alt="Loan support"
-                width={700}
-                height={700}
-                quality={75}
-                priority
-                className="object-cover rounded-3xl"
-              />
+             <Image
+              src="/loan-supported.png"
+              alt="Loan support"
+              width={700}
+              height={700}
+              quality={70}
+              priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 515px"
+              className="object-cover rounded-3xl"
+            />
             </div>
           </div>
 
@@ -51,7 +52,7 @@ export default function LoanSupport({ highlightText, normalText, breakText, desc
             <div className="relative z-20 lg:pl-2">
               <h2 data-aos="fade-up"  className="text-[28px] font-extrabold lg:leading-[55px] tracking-[-0.02em] text-black sm:text-[36px] lg:text-[40px]">
                 {highlightText && (
-                    <span className="text-[#7cc242]">
+                    <span className="text-primary">
                     {highlightText}
                     </span>
                 )}
@@ -99,7 +100,7 @@ export default function LoanSupport({ highlightText, normalText, breakText, desc
 
               <p data-aos="fade-up" data-aos-delay={200} className="mt-6 max-w-[560px] text-[15px] leading-7 text-black lg:ml-[120px]">
                 <span className="font-bold text-[#1380d4]">Lend</span>
-                <span className="font-bold text-[#7cc242]">Smart</span>{" "}
+                <span className="font-bold text-primary">Smart</span>{" "}
                 Mortgages can help guide you through the financing process.
               </p>
             </div>

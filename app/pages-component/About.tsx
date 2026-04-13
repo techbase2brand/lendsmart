@@ -64,7 +64,7 @@ export default function About({description1, description2, gaolHeading, gaolDesc
           <div className="lg:pt-2">
             <h2 data-aos="fade-up"  className="text-[28px] sm:text-[34px] lg:text-[40px] font-extrabold leading-normal md:leading-[1.05] tracking-[-0.02em] text-black">
               About <span className="text-[#1380d4]">Lend</span>
-              <span className="text-[#7cc242]">Smart</span> Mortgages
+              <span className="text-primary">Smart</span> Mortgages
             </h2>
 
             <div data-aos="fade-up" data-aos-delay={200} className="mt-5 border-l-[5px] border-[#79c44a] pl-4">
@@ -83,7 +83,7 @@ export default function About({description1, description2, gaolHeading, gaolDesc
               <p data-aos="fade-up" data-aos-delay={200} className="mt-2 text-[15px] font-semibold leading-7 text-black">
                 {gaolHeading} {" "}
                 {gaolDescription && (
-                   <span className="text-[#79c44a]">
+                   <span className="text-primary">
                     {gaolDescription}
                   </span>
                 )}

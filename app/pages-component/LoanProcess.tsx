@@ -46,7 +46,7 @@ export default function LoanProcess({ highlightText, normalText, breakText, desc
         {/* heading */}
         <div className="mx-auto max-w-[100%] text-center">
           <h2 data-aos="fade-up"  className="text-[28px] sm:text-[38px] lg:text-[48px] xl:text-[54px] font-extrabold leading-[1.08] tracking-[-0.02em] text-black">
-            How Our <span className="text-[#7cc242]">Loan Process</span> Works
+            How Our <span className="text-primary">Loan Process</span> Works
           </h2>
           <p data-aos="fade-up" data-aos-delay={200} className="mx-auto mt-3 max-w-[620px] text-[15px] leading-7 text-[#333]">
             Choosing the right loan can be complicated. At LendSmart Mortgages,
