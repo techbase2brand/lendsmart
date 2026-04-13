@@ -40,13 +40,13 @@ export default function CTABanner({
                   <div className="w-full lg:max-w-[55%]">
                     
                     {title && (
-                      <h2 className="text-[24px] font-semibold leading-normal md:leading-[1.15] tracking-[-0.02em] text-white sm:text-[32px] lg:text-[38px] xl:text-[40px]">
+                      <h2 data-aos="fade-up" className="text-[24px] font-semibold leading-normal md:leading-[1.15] tracking-[-0.02em] text-white sm:text-[32px] lg:text-[38px] xl:text-[40px]">
                         {title}
                       </h2>
                     )}
 
                     {description && (
-                      <p className="mt-5 text-[15px] leading-7 text-[#f1f7e9]">
+                      <p data-aos="fade-up" className="mt-5 text-[15px] leading-7 text-[#f1f7e9]">
                         {description}
                       </p>
                     )}
