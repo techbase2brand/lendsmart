@@ -113,14 +113,14 @@ export default function Testimonials({ title, description }: TestimonialsProps) 
           <div className="relative z-30 lg:pt-10">
             <div className=" ">
               {title && (
-                <h2 className="text-[28px] font-extrabold leading-[1.08] tracking-[-0.02em] text-white sm:text-[34px] lg:text-[40px]">
+                <h2 data-aos="fade-up"  className="text-[28px] font-extrabold leading-[1.08] tracking-[-0.02em] text-white sm:text-[34px] lg:text-[40px]">
                   {title}
                 </h2>
               )}
 
               {description && (
-                <div className="mt-5 border-l-[5px] border-[#79c44a] pl-4">
-                  <p className="text-[15px] leading-7 text-[#b9b9b9]">
+                <div data-aos="fade-up" data-aos-delay={200} className="mt-5 border-l-[5px] border-[#79c44a] pl-4">
+                  <p  className="text-[15px] leading-7 text-[#b9b9b9]">
                     {description}
                   </p>
                 </div>

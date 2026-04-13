@@ -49,7 +49,7 @@ export default function LoanSupport({ highlightText, normalText, breakText, desc
           {/* Right content */}
           <div className="relative lg:min-h-[520px]">
             <div className="relative z-20 lg:pl-2">
-              <h2 className="text-[28px] font-extrabold lg:leading-[55px] tracking-[-0.02em] text-black sm:text-[36px] lg:text-[40px]">
+              <h2 data-aos="fade-up"  className="text-[28px] font-extrabold lg:leading-[55px] tracking-[-0.02em] text-black sm:text-[36px] lg:text-[40px]">
                 {highlightText && (
                     <span className="text-[#7cc242]">
                     {highlightText}
@@ -68,7 +68,7 @@ export default function LoanSupport({ highlightText, normalText, breakText, desc
                 </h2>
 
               <div className="mt-5 max-w-full border-l-[5px] border-[#79c44a] pl-4 sm:max-w-[82%]">
-                <p className="text-[15px] leading-7 text-[#222]">
+                <p data-aos="fade-up" data-aos-delay={200} className="text-[15px] leading-7 text-[#222]">
                   {description}
                 </p>
               </div>
@@ -77,11 +77,9 @@ export default function LoanSupport({ highlightText, normalText, breakText, desc
             {/* Overlapping cards */}
             <div className="mt-6 lg:relative lg:left-[-140px] lg:z-30 lg:mt-5">
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-4">
-                {supportItems.map((item) => (
-                  <div
-                    key={item.label}
-                    className="flex min-h-[82px] w-full flex-row items-center gap-3 rounded-[12px] border border-[#9bd05c] bg-[#F4FBE9] px-4 py-4 shadow-[0_2px_0_rgba(0,0,0,0.02)] sm:px-5 lg:w-full"
-                  >
+                {supportItems.map((item, i) => (
+                  <div data-aos="fade-up" data-aos-delay={i * 100} key={item.label}
+                    className="flex min-h-[82px] w-full flex-row items-center gap-3 rounded-[12px] border border-[#9bd05c] bg-[#F4FBE9] px-4 py-4 shadow-[0_2px_0_rgba(0,0,0,0.02)] sm:px-5 lg:w-full">
                     <div className="relative h-[34px] w-[34px] shrink-0">
                       <Image
                         src={item.icon}
@@ -99,7 +97,7 @@ export default function LoanSupport({ highlightText, normalText, breakText, desc
                 ))}
               </div>
 
-              <p className="mt-6 max-w-[560px] text-[15px] leading-7 text-black lg:ml-[120px]">
+              <p data-aos="fade-up" data-aos-delay={200} className="mt-6 max-w-[560px] text-[15px] leading-7 text-black lg:ml-[120px]">
                 <span className="font-bold text-[#1380d4]">Lend</span>
                 <span className="font-bold text-[#7cc242]">Smart</span>{" "}
                 Mortgages can help guide you through the financing process.

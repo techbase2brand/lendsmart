@@ -62,12 +62,12 @@ export default function About({description1, description2, gaolHeading, gaolDesc
         <div className="grid grid-cols-1 items-end">
           {/* left */}
           <div className="lg:pt-2">
-            <h2  className="text-[28px] sm:text-[34px] lg:text-[40px] font-extrabold leading-normal md:leading-[1.05] tracking-[-0.02em] text-black">
+            <h2 data-aos="fade-up"  className="text-[28px] sm:text-[34px] lg:text-[40px] font-extrabold leading-normal md:leading-[1.05] tracking-[-0.02em] text-black">
               About <span className="text-[#1380d4]">Lend</span>
               <span className="text-[#7cc242]">Smart</span> Mortgages
             </h2>
 
-            <div  className="mt-5 border-l-[5px] border-[#79c44a] pl-4">
+            <div data-aos="fade-up" data-aos-delay={200} className="mt-5 border-l-[5px] border-[#79c44a] pl-4">
             {description1 && (
                 <p className="text-[15px] leading-7 text-[#222]">
                   {description1}
@@ -75,12 +75,12 @@ export default function About({description1, description2, gaolHeading, gaolDesc
               )}
 
               {description2 && (
-                <p className="mt-1 text-[15px] leading-7 text-[#222]">
+                <p data-aos="fade-up" data-aos-delay={200} className="mt-1 text-[15px] leading-7 text-[#222]">
                   {description2}
                 </p>
               )}
               
-              <p className="mt-2 text-[15px] font-semibold leading-7 text-black">
+              <p data-aos="fade-up" data-aos-delay={200} className="mt-2 text-[15px] font-semibold leading-7 text-black">
                 {gaolHeading} {" "}
                 {gaolDescription && (
                    <span className="text-[#79c44a]">
@@ -94,7 +94,7 @@ export default function About({description1, description2, gaolHeading, gaolDesc
           </div>
 
           {/* right */}
-          <div className="relative grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-6 justify-center lg:justify-end">
+          <div  className="relative grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-6 justify-center lg:justify-end">
             <div>
             {/* stats */}
             <div className="mt-10 md:mt-16 flex items-start gap-14 sm:gap-20">

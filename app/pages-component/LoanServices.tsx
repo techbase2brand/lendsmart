@@ -84,10 +84,10 @@ export default function LoanServices({ title, description }: LoanServicesProps) 
             <div className="mb-6 text-center lg:mb-8 lg:text-right">
               <div className="inline-flex flex-row-reverse items-center gap-3 sm:gap-4 lg:flex-row lg:gap-4">
                 <div className="min-w-0 text-left lg:text-right">
-                  <h2 className="text-[28px] font-extrabold leading-none text-white sm:text-[34px] lg:text-[40px]">
+                  <h2 data-aos="fade-up"  className="text-[28px] font-extrabold leading-none text-white sm:text-[34px] lg:text-[40px]">
                     {title}
                   </h2>
-                  <p className="mt-2 text-[14px] leading-snug text-[#a3a3a3] sm:text-[16px] lg:text-[17px]">
+                  <p data-aos="fade-up" data-aos-delay={200} className="mt-2 text-[14px] leading-snug text-[#a3a3a3] sm:text-[16px] lg:text-[17px]">
                     {description}
                   </p>
                 </div>

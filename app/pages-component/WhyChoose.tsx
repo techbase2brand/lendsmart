@@ -16,28 +16,25 @@ export default function WhyChoose() {
           {/* Left content */}
           <div className="relative lg:pt-6 pb-0 md:pb-36">
             <div className=" ">
-              <h2 className="text-[28px] font-extrabold leading-[1.08] tracking-[-0.02em] text-black sm:text-[32px] lg:text-[40px]">
+              <h2 data-aos="fade-up"  className="text-[28px] font-extrabold leading-[1.08] tracking-[-0.02em] text-black sm:text-[32px] lg:text-[40px]">
                 Why Choose <span className="text-[#1380d4]">Lend</span>
                 <span className="text-[#7cc242]">Smart</span> Mortgages
               </h2>
 
               <div className="mt-5 max-w-[650px] border-l-[5px] border-[#79c44a] pl-4">
-                <p className="text-[15px] leading-7 text-[#222]">
+                <p data-aos="fade-up" data-aos-delay={100} className="text-[15px] leading-7 text-[#222]">
                   Choosing the right loan can be complicated. At LendSmart
                   Mortgages, we simplify the process and help you make informed
                   decisions.
                 </p>
 
-                <p className="mt-4 text-[15px] font-semibold leading-7 text-black">
+                <p data-aos="fade-up" data-aos-delay={200} className="mt-4 text-[15px] font-semibold leading-7 text-black">
                   With LendSmart you receive:
                 </p>
 
                 <ul className="mt-2 space-y-2">
-                  {benefits.map((benefit) => (
-                    <li
-                      key={benefit}
-                      className="flex items-start gap-2 text-[15px] leading-7 text-black"
-                    >
+                  {benefits.map((benefit, i) => (
+                    <li data-aos="fade-up" data-aos-delay={i * 100} key={benefit} className="flex items-start gap-2 text-[15px] leading-7 text-black">
                       <span className="mt-[6px] text-[15px] leading-none">✓</span>
                       <span>{benefit}</span>
                     </li>
